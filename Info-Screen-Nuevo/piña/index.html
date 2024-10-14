@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Touch</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <button class="tablink" data-tab="schedule"><i class="fas fa-calendar-alt"></i> Horario</button>
+        <button class="tablink" data-tab="preceptores"><i class="fas fa-user-tie"></i> Preceptores</button>
+        <button class="tablink" data-tab="minigame"><i class="fas fa-gamepad"></i> Minijuego</button>
+        <button class="tablink" data-tab="edit"><i class="fas fa-tools"></i> Editar Información</button>
+    </div>
+
+    <div class="content">
+        <!-- Horario -->
+        <div id="schedule" class="tabcontent">
+            <div class="box">
+                <h1>Horario de Técnico en Informática</h1>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miércoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scheduleContent">
+                        <tr>
+                            <td>08:00 - 09:30</td>
+                            <td>Programación</td>
+                            <td>Redes</td>
+                            <td>Sistemas Operativos</td>
+                            <td>Base de Datos</td>
+                            <td>Seguridad Informática</td>
+                        </tr>
+                        <tr>
+                            <td>09:45 - 11:15</td>
+                            <td>Matemáticas</td>
+                            <td>Programación</td>
+                            <td>Redes</td>
+                            <td>Desarrollo Web</td>
+                            <td>Programación</td>
+                        </tr>
+                        <tr>
+                            <td>11:30 - 13:00</td>
+                            <td>Desarrollo Web</td>
+                            <td>Matemáticas</td>
+                            <td>Programación</td>
+                            <td>Redes</td>
+                            <td>Base de Datos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Preceptores -->
+        <div id="preceptores" class="tabcontent">
+            <div class="box">
+                <h1>Preceptores</h1>
+                <div class="turnos-container">
+                    <!-- Turno Mañana -->
+                    <div class="turno">
+                        <h2>Turno Mañana</h2>
+                        <ul>
+                            <li><strong>Adán:</strong> 1a, 1b, 1c</li>
+                            <li><strong>Martina Andrea:</strong> 1f, 1g, 2e, 2f</li>
+                            <li><strong>Cristina:</strong> 1d, 1e, 2d</li>
+                            <li><strong>Paola:</strong> 2a, 2b, 2c</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Turno Tarde -->
+                    <div class="turno">
+                        <h2>Turno Tarde</h2>
+                        <ul>
+                            <li><strong>Itatí:</strong> 3a, 3b, 3c, 3d, 3e, 4b, 5b</li>
+                            <li><strong>Cristina:</strong> 4a, 4e, 5a, 5e, 6a, 6b, 6e</li>
+                            <li><strong>Paola:</strong> Jefa de Preceptores</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- Minijuego: Slot Machine -->
+<div id="minigame" class="tabcontent">
+    <div class="box">
+        <h1>Slot Machine</h1>
+        <div class="slot-machine">
+            <div class="reel" id="reel1">
+                <div class="symbol">🍒</div>
+                <div class="symbol">🍋</div>
+                <div class="symbol">🍊</div>
+                <div class="symbol">🍒</div>
+                <div class="symbol">🍉</div>
+            </div>
+            <div class="reel" id="reel2">
+                <div class="symbol">🍒</div>
+                <div class="symbol">🍋</div>
+                <div class="symbol">🍊</div>
+                <div class="symbol">🍒</div>
+                <div class="symbol">🍉</div>
+            </div>
+            <div class="reel" id="reel3">
+                <div class="symbol">🍒</div>
+                <div class="symbol">🍋</div>
+                <div class="symbol">🍊</div>
+                <div class="symbol">🍒</div>
+                <div class="symbol">🍉</div>
+            </div>
+        </div>        
+        <button class="btn-spin" id="spinButton">Girar</button>
+        <p id="resultMessage" class="result-message"></p>
+    </div>
+</div>
+
+
+        <!-- Modo de Editor -->
+        <div id="edit" class="tabcontent">
+            <div class="box">
+                <h1><i class="fas fa-user-cog"></i> Modo de Editor</h1>
+                <form id="loginForm" class="dev-form">
+                    <div class="form-group">
+                        <label for="username"><i class="fas fa-user"></i> Usuario:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><i class="fas fa-lock"></i> Contraseña:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button class="btn-login" type="submit"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
+                </form>
+                <div id="developerContent" style="display:none;">
+                    <div class="dev-section">
+                        <h2><i class="fas fa-bullhorn"></i> Editar Avisos</h2>
+                        <textarea id="editNotices" rows="8" cols="50" placeholder="Escribe los avisos aquí..."></textarea>
+                        <button class="btn-save" id="saveNoticesBtn"><i class="fas fa-save"></i> Guardar Avisos</button>
+                    </div>
+                    
+                    <div class="dev-section">
+                        <h2><i class="fas fa-calendar-alt"></i> Editar Horario</h2>
+                        <textarea id="editSchedule" rows="8" cols="50" placeholder="Escribe el horario aquí..."></textarea>
+                        <button class="btn-save" id="saveScheduleBtn"><i class="fas fa-save"></i> Guardar Horario</button>
+                    </div>
+                    
+                    <!-- Botón Cerrar Sesión movido abajo -->
+                    <button id="logoutBtn" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+/* Estilos globales */
+body {
+    font-family: 'Press Start 2P', Arial, sans-serif; /* Fuente estilo videojuego retro */
+    margin: 0;
+    background-color: #1b1b1b;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Fondo dinámico */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #1e90ff, #ff1493, #32cd32, #ff4500);
+    background-size: 600% 600%;
+    animation: gradientAnimation 15s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(18, 18, 18, 0.9);
+    border-right: 2px solid #f39c12;
+    padding-top: 20px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar button {
+    display: block;
+    background-color: #333;
+    color: #f1c40f;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 18px;
+    border-bottom: 2px solid #f39c12;
+    transition: all 0.3s ease;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.sidebar button:hover {
+    background-color: #e74c3c;
+    color: #ffffff;
+    box-shadow: 0 0 15px #e74c3c, 0 0 30px #e74c3c;
+}
+
+/* Content */
+.content {
+    margin-left: 240px;
+    padding: 50px;
+    width: calc(100% - 240px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Caja de contenido */
+.box {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Títulos */
+h1, h2 {
+    color: #f39c12;
+    font-weight: 600;
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 1px;
+}
+
+/* Efecto de Resplandor en Títulos */
+h1:hover, h2:hover {
+    text-shadow: 0 0 15px #e74c3c, 0 0 30px #e74c3c;
+}
+
+/* Botones de Acción */
+.btn-restart, .btn-login, .btn-save {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-restart:hover, .btn-login:hover, .btn-save:hover {
+    background-color: #f39c12;
+    box-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12;
+}
+
+/* Estilo para el Tres en Raya */
+.tic-tac-toe-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 0 auto;
+    width: 300px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #34495e;
+    border: 3px solid #f39c12;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: #f39c12;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Estilo del Formulario del Modo Editor */
+.dev-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dev-form input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: #fff;
+}
+
+.dev-form input:focus {
+    border-color: #f39c12;
+    box-shadow: 0 0 10px #f39c12;
+}
+
+/* Secciones del Modo Editor */
+.dev-section {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.dev-section h2 {
+    font-size: 1.5em;
+    color: #f39c12;
+}
+
+/* Botón Cerrar Sesión */
+.btn-logout {
+    padding: 10px 20px;
+    background-color: #c0392b;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn-logout:hover {
+    background-color: #e74c3c;
+}
+
+/* Slot Machine */
+.slot-machine {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+.symbol {
+    font-size: 3em; /* Aumentado a 3em para un mejor tamaño de los símbolos */
+    position: absolute; /* Permite posicionar los símbolos de forma absoluta */
+    width: 100%; /* Asegura que el símbolo ocupe todo el ancho */
+    text-align: center; /* Centra el símbolo horizontalmente */
+    transition: transform 0.5s; /* Efecto de transición al girar */
+}
+
+/* Opcional: ajuste del contenedor del carrete */
+
+.reel {
+    width: 60px; /* Ancho más grande para el slot machine */
+    height: 100px;
+    margin: 0 5px;
+    background-color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em; /* Aumentar tamaño de los símbolos */
+    color: #fff;
+    border: 2px solid #fff;
+    animation: none; /* Sin animación por defecto */
+}
+
+/* Animación de giro */
+@keyframes spin {
+    0% { transform: rotateX(0); }
+    100% { transform: rotateX(360deg); }
+}
+
+#resultMessage {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
